@@ -115,6 +115,27 @@ The system allows administrators to control resource
 usage by defining limits for processes. These limits
 help improve system stability and resource management.
 
+
+------------------------------------------------------------
+Technical Observations
+------------------------------------------------------------
+
+• Linux maintains a table of currently opened files that can be viewed using the lsof command.
+
+• Every running process communicates with files through file descriptors.
+
+• Standard Input (0), Standard Output (1), and Standard Error (2) are the default file descriptors assigned to every process.
+
+• Output redirection (>) stores normal program output in a file, while error redirection (2>) stores error messages separately.
+
+• The ulimit command displays resource limits that help protect the operating system from excessive resource usage.
+
+------------------------------------------------------------
+Explanation of How Linux Manages File I/O
+------------------------------------------------------------
+
+Linux manages file input and output through file descriptors. Every process receives standard input, standard output, and standard error when it starts. Applications read from and write to files using these descriptors. The Linux kernel handles all file operations, maintains information about open files, controls access permissions, and manages system resources efficiently. Output redirection allows command results to be written into files, while error redirection stores error messages separately, improving command execution and troubleshooting.
+
 ------------------------------------------------------------
 Conclusion
 ------------------------------------------------------------
