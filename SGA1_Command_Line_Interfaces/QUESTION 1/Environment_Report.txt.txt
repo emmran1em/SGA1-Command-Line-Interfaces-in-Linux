@@ -1,0 +1,121 @@
+------------------------------------------------------------
+                  ENVIRONMENT REPORT
+------------------------------------------------------------
+
+Student Name : Muhammad Emmran M
+Student ID   : 2025EB01236
+Course       : Command Line Interfaces in Linux
+Assignment   : SGA 1
+Question     : Question 1 – Linux Environment Verification
+Date         : 02-07-2026
+
+------------------------------------------------------------
+Objective
+------------------------------------------------------------
+
+To verify the Linux user environment by identifying the current user,
+associated groups, shell, working directory, directory contents,
+and network connectivity using basic Linux commands.
+
+------------------------------------------------------------
+Commands Executed
+------------------------------------------------------------
+
+Command 1
+------------------------------------------------------------
+
+Command:
+whoami
+
+Output:
+emmran
+
+Observation:
+The command displays the currently logged-in Linux username.
+
+------------------------------------------------------------
+
+Command 2
+------------------------------------------------------------
+
+Command:
+groups
+
+Output:
+emmran adm cdrom sudo dip plugdev users
+
+Observation:
+The command lists all groups associated with the current user account.
+
+------------------------------------------------------------
+
+Command 3
+------------------------------------------------------------
+
+Command:
+echo $SHELL
+
+Output:
+/bin/bash
+
+Observation:
+The default login shell for the current user is Bash.
+
+------------------------------------------------------------
+
+Command 4
+------------------------------------------------------------
+
+Command:
+pwd
+
+Output:
+/home/emmran
+
+Observation:
+The present working directory is the user's home directory.
+
+------------------------------------------------------------
+
+Command 5
+------------------------------------------------------------
+
+Command:
+ls -la
+
+Output:
+The command displayed all files and directories in the current working directory,
+including hidden files such as .bashrc, .profile, .bash_logout and .bash_history.
+
+Observation:
+The "ls -la" command lists all files and directories in the current location,
+including hidden files with detailed permissions, ownership, size and timestamps.
+
+------------------------------------------------------------
+
+Command 6
+------------------------------------------------------------
+
+Command:
+ping -c 4 google.com
+
+Output:
+4 packets transmitted,
+4 received,
+0% packet loss.
+
+Observation:
+The ping command successfully verified network connectivity by sending
+ICMP echo requests to Google's server without any packet loss.
+
+------------------------------------------------------------
+Conclusion
+------------------------------------------------------------
+
+The Linux environment was successfully verified using basic command-line
+utilities. All required information including the current user, user groups,
+shell, working directory, directory contents, and network connectivity
+was obtained successfully. The system environment is properly configured
+for performing Linux command-line operations.
+
+------------------------------------------------------------

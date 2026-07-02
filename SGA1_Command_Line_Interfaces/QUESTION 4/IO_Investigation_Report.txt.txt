@@ -1,0 +1,127 @@
+------------------------------------------------------------
+              FILE ACCESS & I/O INVESTIGATION REPORT
+------------------------------------------------------------
+
+Student Name : Muhammad Emmran M
+Student ID   : 2025EB01236
+Course       : Command Line Interfaces in Linux
+Assignment   : SGA 1
+Question     : Question 4 - File Access and I/O Investigation
+Date         : 02-07-2026
+
+------------------------------------------------------------
+Objective
+------------------------------------------------------------
+
+To investigate Linux file access and input/output (I/O)
+operations by identifying open files, examining file
+descriptors, demonstrating output and error redirection,
+and observing system resource limits.
+
+------------------------------------------------------------
+Command 1
+------------------------------------------------------------
+
+Command:
+
+lsof sample.txt
+
+Output:
+
+The command displayed the process using sample.txt,
+including the command name (less), process ID (PID),
+user, file descriptor, file type, inode number, and
+file name.
+
+Observation:
+
+The file sample.txt was opened using the 'less' command.
+The lsof utility successfully identified the process that
+currently had the file open.
+
+------------------------------------------------------------
+Command 2
+------------------------------------------------------------
+
+Command:
+
+ls -l /proc/$$/fd
+
+Output:
+
+Displayed the shell's active file descriptors:
+
+0 -> Standard Input (stdin)
+1 -> Standard Output (stdout)
+2 -> Standard Error (stderr)
+255 -> Current shell descriptor
+
+Observation:
+
+Linux assigns file descriptors to every running process.
+Descriptors 0, 1, and 2 are reserved for standard input,
+standard output, and standard error respectively.
+
+------------------------------------------------------------
+Command 3
+------------------------------------------------------------
+
+Commands:
+
+echo "Hello Linux" > output.txt
+
+ls file_that_does_not_exist 2> error.txt
+
+cat output.txt
+
+cat error.txt
+
+Output:
+
+output.txt contains:
+
+Hello Linux
+
+error.txt contains:
+
+ls: cannot access 'file_that_does_not_exist':
+No such file or directory
+
+Observation:
+
+The '>' operator redirected normal output into output.txt.
+
+The '2>' operator redirected the error message into
+error.txt, demonstrating separate handling of standard
+output and standard error.
+
+------------------------------------------------------------
+Command 4
+------------------------------------------------------------
+
+Command:
+
+ulimit -a
+
+Output:
+
+Displayed the current resource limits for the shell,
+including open files, stack size, memory limits,
+process limits, and file size limits.
+
+Observation:
+
+The system allows administrators to control resource
+usage by defining limits for processes. These limits
+help improve system stability and resource management.
+
+------------------------------------------------------------
+Conclusion
+------------------------------------------------------------
+
+This investigation demonstrated how Linux manages file
+access and I/O operations. The lsof utility identified
+open files, file descriptors showed how processes access
+input and output streams, output and error redirection
+stored information in separate files, and ulimit displayed
+system resource limits used to manage process execution.
